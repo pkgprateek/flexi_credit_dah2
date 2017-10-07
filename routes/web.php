@@ -12,9 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
 
 Auth::routes();
+Route::post('login', ['uses' => 'Customer_data@login'])->name('confirmLogin');
 
 Route::get('/home', 'HomeController@index')->name('home');
